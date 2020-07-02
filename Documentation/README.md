@@ -1,2 +1,2 @@
 ## Conceptual ER Diagram
-![alt text](Conceptual_ER_Diagram.jpg)
+![alt text](Conceptual_ER_Diagram.png)
