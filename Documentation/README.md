@@ -1,15 +1,14 @@
 ##Table of Contents
 
-- [Conceptual ER Diagram](###conceptual_er_diagram)
-- [Change History](###change_history)
+1. [Conceptual ER Diagram](#conceptual_er_diagram)
+2. [Change History](#change_history)
 
 
-### Conceptual ER Diagram
+# Conceptual ER Diagram
 ![alt text](Conceptual_ER_Diagram.jpg)
 
----
 
-### Change History
+# Change History
 
 ##### Project Outline [07/12/2020]
 This section describes the changes made to the CS480 Demo in order to adopt it to the chosen project. 
