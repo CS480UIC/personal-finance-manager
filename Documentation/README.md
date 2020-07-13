@@ -1,4 +1,9 @@
-## Conceptual ER Diagram
+##Table of Contents
+[Conceptual ER Diagram](###conceptual_er_diagram)
+[Change History](###change_history)
+
+
+### Conceptual ER Diagram
 ![alt text](Conceptual_ER_Diagram.jpg)
 
 ---
