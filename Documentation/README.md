@@ -1,6 +1,7 @@
 ##Table of Contents
-[Conceptual ER Diagram](###conceptual_er_diagram)
-[Change History](###change_history)
+
+- [Conceptual ER Diagram](###conceptual_er_diagram)
+- [Change History](###change_history)
 
 
 ### Conceptual ER Diagram
