@@ -1,5 +1,8 @@
 ## Conceptual ER Diagram
 ![alt text](Conceptual_ER_Diagram.jpg)
+
+---
+
 ### Change History
 
 ##### Project Outline [07/12/2020]
@@ -18,7 +21,7 @@ This section describes the changes made to the CS480 Demo in order to adopt it t
 
 ![alt text](pom_changes.png)
 
-###### Other Minor Changes
+**Other Minor Changes**
 Some minor changes were required to be made to the conceptual ER diagram to obtain a better overall database design. These changes were as follows:
 - Changed table name `bank_account` to just `account` since the the prior is inferred from the context in which the database has been created.
 - The attribute `description` was removed from the table `account` (previously `bank_account`) since it was deemed unnecessary.
