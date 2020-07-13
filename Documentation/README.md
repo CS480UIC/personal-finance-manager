@@ -1,4 +1,4 @@
-##Table of Contents
+## Table of Contents
 
 1. [Conceptual ER Diagram](#conceptual_er_diagram)
 2. [Change History](#change_history)
