@@ -7,7 +7,7 @@
   <head>
     <base href="">
     
-    <title>body</title>
+    <title>My Portfolio</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -15,20 +15,16 @@
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<meta http-equiv="content-type" content="text/html;charset=utf-8">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 
   </head>
   
   <body>
-    <h1>My Portfolio</h1>
+    <h1>${sessionScope.session_user.username }'s Portfolio</h1>
     <br>
     <form action="<c:url value='/findAllPortfolio'/>" method="post">
     	<input type="hidden" name="username"   value=${sessionScope.session_user.username }/>
     	<input type="hidden" name="IncomeList" value=NULL/>
     	<input type="submit" value="List My Portfolio"/>
     </form>
-    <%-- <a href="<c:url value='/findAllIncome'/>" target="body">List All My Income</a>&nbsp;&nbsp; --%>
   </body>
 </html>

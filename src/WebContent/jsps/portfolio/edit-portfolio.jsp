@@ -1,4 +1,3 @@
-<%-- <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%> --%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -28,7 +27,7 @@
 <form action="<c:url value='/StockServletUpdate'/>" method="post">
 	<input type="hidden" name="action" value="update"/>
 	<input type="hidden" name="username" value=${sessionScope.session_user.username }/>
-	
+
 	User ID:   <input type="text" name="user_id" value="${form.user_id }"/>
 	Symbol:    :<input type="text" name="symbol" value="${form.symbol}" />" />  
 	Quantity    :<input type="text" name="quantity" value="${form.quantity }"/>
