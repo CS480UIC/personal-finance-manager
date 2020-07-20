@@ -1,6 +1,9 @@
 
 CREATE TABLE IF NOT EXISTS tb_user(
 	user_id INT NOT NULL AUTO_INCREMENT,
+	username VARCHAR(50),
+	`password` VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
     name VARCHAR(20),
     address VARCHAR(50),
     phone BIGINT,
@@ -10,7 +13,7 @@ CREATE TABLE IF NOT EXISTS tb_user(
 CREATE TABLE IF NOT EXISTS income(
 	income_id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
-    date DATE,
+    in_date DATE,
     description VARCHAR(50),
     amount DECIMAL(6,2),
     tags VARCHAR(50),
@@ -94,20 +97,18 @@ CREATE TABLE IF NOT EXISTS transaction(
     FOREIGN KEY (user_id) REFERENCES tb_user(user_id)
 );
 
-INSERT INTO tb_user (name,address,phone)
-VALUES ('Alan' , '111, Adams St.' , 1111111111),
-	   ('Bella', '222, Baxter St.', 2222222222),
-	   ('Cindy', '333, Carter St.', 3333333333);
+INSERT INTO tb_user (username,password,email,name,address,phone)
+VALUES ('alan','alan','alan@gmail.com','Alan' , '111, Adams St.' , 1111111111),
+	   ('bella','bella','bella@gmail.com','Bella', '222, Baxter St.', 2222222222),
+	   ('cindy','cindy','cindy@gmail.com','Cindy', '333, Carter St.', 3333333333);
 
-INSERT INTO income (user_id,date,description,amount,tags)
-VALUES (2,'2020-05-31','Salary for May 2020',3000,'salary;may;2020;'),
-	   (3,'2020-06-05','Lent money received',250 ,'loaned;return;'),
-       (3,'2020-06-27','Salary for June 2020',5500 ,'salary;june;2020');
+INSERT INTO income (user_id,in_date,description,amount,tags) VALUES (2,'2020-05-31','Salary for May 2020' ,3000 ,'salary;may;2020;');
+INSERT INTO income (user_id,in_date,description,amount,tags) VALUES (3,'2020-06-05','Lent money received' ,250  ,'loaned;return;');
+INSERT INTO income (user_id,in_date,description,amount,tags) VALUES (3,'2020-06-27','Salary for June 2020',5500 ,'salary;june;2020');
 
-INSERT INTO expense (user_id,date,description,amount,tags)
-VALUES (1,'2020-05-20','Summer semester fees',700,'fees;summer;semester;'),
-	   (2,'2020-06-03','Flight tickets to LA',450,'flight;ticket;Chicago;LA;'),
-       (1,'2020-06-18','Ordered carryout',23 ,'ubsereats;chipotle;mexican;food;');
+INSERT INTO expense (user_id,date,description,amount,tags) VALUES (1,'2020-05-20','Summer semester fees',700,'fees;summer;semester;');
+INSERT INTO expense (user_id,date,description,amount,tags) VALUES (2,'2020-06-03','Flight tickets to LA',450,'flight;ticket;Chicago;LA;');
+INSERT INTO expense (user_id,date,description,amount,tags) VALUES (1,'2020-06-18','Ordered carryout'    ,23 ,'ubsereats;chipotle;mexican;food;');
 
 INSERT INTO account (user_id,date,balance)
 VALUES (1,'2020-01-01',127700),

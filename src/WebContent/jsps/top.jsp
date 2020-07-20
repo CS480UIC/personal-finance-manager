@@ -35,12 +35,14 @@
 <div style="font-size: 10pt;">
 	<c:choose>
 		<c:when test="${empty sessionScope.session_user }">
-			<a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">Login</a> |&nbsp; 
-			<a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">Register</a>|&nbsp; 
+			<a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">Login</a> |
+			<a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">Register</a>  |
 			<a href="<c:url value='/jsps/user/initialize.jsp'/>" target="_parent">Initialize Database</a>		
 		</c:when>
 		<c:otherwise>
-			Hello：${sessionScope.session_user.username };
+			Hello：${sessionScope.session_user.username };&nbsp;
+			<a href="<c:url value='/jsps/income-expense/income-expense-main.jsp'/>" target="body">Income/Expense</a> |
+			<a href="<c:url value='/jsps/portfolio/portfolio-main.jsp'/>" target="body">Portfolio</a> | 
 			<a href="<c:url value='/jsps/item.jsp'/>" target="body">Query Result</a>&nbsp;&nbsp;
 		</c:otherwise>
 	</c:choose>

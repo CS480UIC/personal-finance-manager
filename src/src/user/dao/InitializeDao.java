@@ -38,30 +38,21 @@ public class InitializeDao {
 			
 			//Deleting existing tables
 			statement = connect.createStatement();
-			statement.executeUpdate("DROP TABLE IF EXISTS tb_user");
-			statement.executeUpdate("DROP TABLE IF EXISTS income");
-			statement.executeUpdate("DROP TABLE IF EXISTS expense");
-			statement.executeUpdate("DROP TABLE IF EXISTS account");
-			statement.executeUpdate("DROP TABLE IF EXISTS asset");
-			statement.executeUpdate("DROP TABLE IF EXISTS liability");
-			statement.executeUpdate("DROP TABLE IF EXISTS balance_sheet");
-			statement.executeUpdate("DROP TABLE IF EXISTS stock");
-			statement.executeUpdate("DROP TABLE IF EXISTS portfolio");
 			statement.executeUpdate("DROP TABLE IF EXISTS transaction");
-//			
-//			String sqlstmt = "CREATE TABLE IF NOT EXISTS Student " +
-//							"(id INTEGER not NULL AUTO_INCREMENT, " + 
-//							"Name VARCHAR(20), " +
-//							"Address VARCHAR(50), " +
-//							"Status VARCHAR(10), " +
-//							"PRIMARY KEY ( id ))";
-//			
-//			statement.executeUpdate(sqlstmt);
-			
+			statement.executeUpdate("DROP TABLE IF EXISTS portfolio");
+			statement.executeUpdate("DROP TABLE IF EXISTS stock");
+			statement.executeUpdate("DROP TABLE IF EXISTS balance_sheet");
+			statement.executeUpdate("DROP TABLE IF EXISTS liability");
+			statement.executeUpdate("DROP TABLE IF EXISTS asset");
+			statement.executeUpdate("DROP TABLE IF EXISTS account");
+			statement.executeUpdate("DROP TABLE IF EXISTS expense");
+			statement.executeUpdate("DROP TABLE IF EXISTS income");
+			statement.executeUpdate("DROP TABLE IF EXISTS tb_user");
 			//Initialize the script runner
 		    ScriptRunner sr = new ScriptRunner(connect);
 		    //Creating a reader object
-		    Reader reader = new BufferedReader(new FileReader("/Users/rushit/eclipse-workspace/CS480Demo/WebContent/sql/initialize_db.sql"));
+		    Reader reader = new BufferedReader(new FileReader("/Users/rushit/eclipse-workspace/"+
+		    										"CS480Demo/WebContent/sql/initialize_db.sql"));
 		    sr.runScript(reader);
 		    
 		} catch(SQLException e) {

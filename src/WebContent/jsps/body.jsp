@@ -22,6 +22,6 @@
   </head>
   
   <body>
-    <h1>Welcome to the demo</h1>
+    <h1>Welcome ${sessionScope.session_user.username }</h1>
   </body>
 </html>
