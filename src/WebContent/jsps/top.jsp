@@ -43,7 +43,8 @@
 			Hello ${sessionScope.session_user.username }<br>
 			<a href="<c:url value='/jsps/income-expense/income-expense-main.jsp'/>" target="body">Income/Expense</a> |
 			<a href="<c:url value='/jsps/portfolio/portfolio-main.jsp'/>" target="body">Portfolio</a> |
-			<a href="<c:url value='/UserServletLogout'/>" target="_parent">Logout</a> | 
+			<a href="<c:url value='/jsps/portfolio/portfolio-script.jsp'/>" target="body">Live Portfolio</a> |
+			<a href="<c:url value='/UserServletLogout'/>" target="_parent">Logout</a> |
 			<a href="<c:url value='/jsps/item.jsp'/>" target="body">Query Result</a>&nbsp;&nbsp;
 		</c:otherwise>
 	</c:choose>
