@@ -2,6 +2,8 @@ package portfolio.web.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -48,6 +50,7 @@ public class findAllPortfolio extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// Set refresh, autoload time as 5 seconds
 		Map<String,String[]> paramMap = request.getParameterMap();
 		String[] values = paramMap.get("username");
 		String username = StringUtils.substring(values[0], 0, values[0].length() - 1);
@@ -64,7 +67,6 @@ public class findAllPortfolio extends HttpServlet {
 		try {
 			List<Portfolio> li = portfolioservice.findallPortfolio(username);
 			PrintWriter out = response.getWriter();
-			
 			out.print("<table><tr><th>user_id</th><th>symbol</th><th>quantity</th><th>buy_price</th><th>investment</th><th>current_price</th><th>equity</th><th>actions</th>");
 			for(int i = 0; i < li.size();i++){
 				out.print("<tr><td>");

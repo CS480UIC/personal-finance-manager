@@ -114,6 +114,16 @@
     <servlet-name>StockServletUpdate</servlet-name>
     <url-pattern>/StockServletUpdate</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserServletLogout</display-name>
+    <servlet-name>UserServletLogout</servlet-name>
+    <servlet-class>user.web.servlet.UserServletLogout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServletLogout</servlet-name>
+    <url-pattern>/UserServletLogout</url-pattern>
+  </servlet-mapping>
   
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -125,5 +135,6 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
+
 
 

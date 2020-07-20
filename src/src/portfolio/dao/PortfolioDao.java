@@ -21,7 +21,6 @@ public class PortfolioDao {
 			Connection connect = DriverManager
 			          .getConnection("jdbc:mysql://localhost:3306/finance_manager?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&"
 			        		  + "user=root&password=RnS@66268");
-			System.out.println("Succesfully connect to database");
 		    String sql = "select user_id from tb_user where username=?";
 		    PreparedStatement preparestatement = connect.prepareStatement(sql); 
 		    preparestatement.setString(1,username);
