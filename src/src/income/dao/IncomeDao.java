@@ -138,4 +138,39 @@ public class IncomeDao {
 		return list;
 
 	}
+	
+	public List<Income> FindIncomeTag(String user_id, String month, String tag) {
+		// TODO Auto-generated method stub
+		List<Income> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection connect = DriverManager
+			          .getConnection("jdbc:mysql://localhost:3306/finance_manager?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&"
+			        		  + "user=root&password=RnS@66268");
+			
+			
+			String sql = "select * from income where user_id=? and tags like ? and MONTH(in_date)=?";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			preparestatement.setString(1,user_id);
+			preparestatement.setString(2,"%"+tag+"%");
+			preparestatement.setString(3,month);
+			ResultSet resultSet = preparestatement.executeQuery();
+			
+			while(resultSet.next()){
+				Income income = new Income();
+				income.setIncome_id(Integer.toString(resultSet.getInt("income_id")));
+				income.setUser_id(Integer.toString(resultSet.getInt("user_id")));
+				income.setIn_date(resultSet.getString("in_date"));
+				income.setDescription(resultSet.getString("description"));
+	    		income.setAmount(Float.toString(resultSet.getFloat("amount")));
+	    		income.setTags(resultSet.getString("tags"));
+	    		list.add(income);
+			 }
+			 
+		} catch(SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+
+	}
 }

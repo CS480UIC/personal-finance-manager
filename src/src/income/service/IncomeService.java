@@ -43,4 +43,9 @@ public class IncomeService {
 		
 	}
 
+	public List<Income> FindIncomeTag(String user_id, String month, String tag) {
+		// TODO Auto-generated method stub
+		return incomeDao.FindIncomeTag(user_id,month,tag);
+	}
+
 }

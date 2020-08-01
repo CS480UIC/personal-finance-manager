@@ -154,6 +154,18 @@
     <servlet-name>viewProfitableStocks</servlet-name>
     <url-pattern>/viewProfitableStocks</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FindIncomeTag</display-name>
+    <servlet-name>FindIncomeTag</servlet-name>
+    <servlet-class>income.web.servlet.FindIncomeTag</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindIncomeTag</servlet-name>
+    <url-pattern>/FindIncomeTag</url-pattern>
+  </servlet-mapping>
+  
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>login.jsp</welcome-file>
