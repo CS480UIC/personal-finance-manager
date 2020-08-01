@@ -163,5 +163,39 @@ public class PortfolioDao {
 		return list;
 
 	}
+	
+	public List<Portfolio> viewProfitableStocks(String user_id, String x) throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Portfolio> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection connect = DriverManager
+			          .getConnection("jdbc:mysql://localhost:3306/finance_manager?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&"
+			        		  + "user=root&password=RnS@66268");
+	
+			
+			String sql = "select * from portfolio where user_id=? and ((current_price-buy_price)*100/buy_price)>?";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			preparestatement.setString(1,user_id);
+			preparestatement.setString(2,x);
+			ResultSet resultSet = preparestatement.executeQuery();
+			
+			while(resultSet.next()){
+				Portfolio portfolio = new Portfolio();
+				portfolio.setUser_id(Integer.toString(resultSet.getInt("user_id")));
+				portfolio.setSymbol(resultSet.getString("symbol"));
+				portfolio.setQuantity(Integer.toString(resultSet.getInt("quantity")));
+				portfolio.setBuy_price(Float.toString(resultSet.getFloat("buy_price")));
+				portfolio.setInvestment(Float.toString(resultSet.getFloat("investment")));
+				portfolio.setCurrent_price(Float.toString(resultSet.getFloat("current_price")));
+				portfolio.setEquity(Float.toString(resultSet.getFloat("equity")));
+	    		list.add(portfolio);
+			 }
+			 
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+
+	}
 
 }

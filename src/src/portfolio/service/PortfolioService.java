@@ -43,4 +43,8 @@ public class PortfolioService {
 		portfolioDao.delete(form,user_id);
 	}
 
+	public List<Portfolio> viewProfitableStocks(String user_id, String x) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+		return portfolioDao.viewProfitableStocks(user_id,x);
+	}
+
 }

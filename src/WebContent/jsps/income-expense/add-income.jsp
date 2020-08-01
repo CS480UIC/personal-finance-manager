@@ -28,9 +28,12 @@
 <form action="<c:url value='/IncomeServletAdd'/>" method="post">
 	<input type="hidden" name="method" value="add"/>
 	<input type="hidden" name="username" value=${sessionScope.session_user.username }/>
+
+	Income Date    :<input type="date" name="in_date"/>  
+	<span class="smallText">(MM-DD-YYYY)</span>
 	
-	Income Date:    :<input type="text" name="in_date" value="<fmt:formatDate pattern="mm/dd/yyyy" value="${form.in_date}" />" />  
-	
+	<span style="color: red; font-weight: 900">${errors.description }</span>
+	<br/>
 	Description    :<input type="text" name="description" value="${form.description }"/>
 	<span style="color: red; font-weight: 900">${errors.description }</span>
 	<br/>

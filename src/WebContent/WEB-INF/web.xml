@@ -124,7 +124,36 @@
     <servlet-name>UserServletLogout</servlet-name>
     <url-pattern>/UserServletLogout</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>LiabilityServletAdd</display-name>
+    <servlet-name>LiabilityServletAdd</servlet-name>
+    <servlet-class>liability.web.servlet.LiabilityServletAdd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LiabilityServletAdd</servlet-name>
+    <url-pattern>/LiabilityServletAdd</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>findAllLiability</display-name>
+    <servlet-name>findAllLiability</servlet-name>
+    <servlet-class>liability.web.servlet.findAllLiability</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findAllLiability</servlet-name>
+    <url-pattern>/findAllLiability</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>viewProfitableStocks</display-name>
+    <servlet-name>viewProfitableStocks</servlet-name>
+    <servlet-class>portfolio.web.servlet.viewProfitableStocks</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewProfitableStocks</servlet-name>
+    <url-pattern>/viewProfitableStocks</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>login.jsp</welcome-file>

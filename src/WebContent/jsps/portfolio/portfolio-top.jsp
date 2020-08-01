@@ -12,5 +12,6 @@
 	<a href="<c:url value='add-stock.jsp'/>" target="_parent">Add Portfolio Entry</a>  |
 	<a href="<c:url value='all-portfolio.jsp'/>" target="_parent">View Portfolio</a> |
 	<a href="<c:url value='edit-portfolio.jsp'/>" target="_parent">Update Portfolio Entry</a> |
-	<a href="<c:url value='delete-portfolio.jsp'/>" target="_parent">Delete Portfolio Entry</a> 
+	<a href="<c:url value='delete-portfolio.jsp'/>" target="_parent">Delete Portfolio Entry</a><br>
+	<a href="<c:url value='view-profit-stocks.jsp'/>" target="_parent">View Profitable Stocks</a> 
 </html>

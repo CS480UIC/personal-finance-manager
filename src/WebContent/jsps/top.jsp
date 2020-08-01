@@ -40,12 +40,13 @@
 			<a href="<c:url value='/jsps/user/initialize.jsp'/>" target="_parent">Initialize Database</a>		
 		</c:when>
 		<c:otherwise>
-			Hello ${sessionScope.session_user.username }<br>
+			Hello ${sessionScope.session_user.username }  (User ID: ${sessionScope.session_user.user_id } )<br>
 			<a href="<c:url value='/jsps/income-expense/income-expense-main.jsp'/>" target="body">Income/Expense</a> |
 			<a href="<c:url value='/jsps/portfolio/portfolio-main.jsp'/>" target="body">Portfolio</a> |
 			<a href="<c:url value='/jsps/portfolio/portfolio-script.jsp'/>" target="body">Live Portfolio</a> |
 			<a href="<c:url value='/UserServletLogout'/>" target="_parent">Logout</a> |
-			<a href="<c:url value='/jsps/item.jsp'/>" target="body">Query Result</a>&nbsp;&nbsp;
+			<a href="<c:url value='/jsps/item.jsp'/>" target="body">Query ALL USERS</a><br>
+			<a href="<c:url value='/jsps/asset-liability/asset-liability-main.jsp'/>" target="body">Assets/Liabilities</a>&nbsp;&nbsp;
 		</c:otherwise>
 	</c:choose>
 

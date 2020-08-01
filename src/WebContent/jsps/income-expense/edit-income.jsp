@@ -30,8 +30,11 @@
 	<input type="hidden" name="username" value=${sessionScope.session_user.username }/>
 	
 	Income ID:   <input type="text" name="income_id" value="${form.income_id }"/>
-	Income Date:    :<input type="text" name="in_date" value="<fmt:formatDate pattern="mm/dd/yyyy" value="${form.in_date}" />" />  
-	
+	<span style="color: red; font-weight: 900">${errors.description }</span>
+	<br/>
+	Income Date    :<input type="date" name="in_date"/>  
+	<span class="smallText">(MM-DD-YYYY)</span>  
+	<br/>
 	Description    :<input type="text" name="description" value="${form.description }"/>
 	<span style="color: red; font-weight: 900">${errors.description }</span>
 	<br/>
