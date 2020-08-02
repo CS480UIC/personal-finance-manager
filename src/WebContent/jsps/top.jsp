@@ -46,6 +46,7 @@
 			<a href="<c:url value='/jsps/portfolio/portfolio-script.jsp'/>" target="body">Live Portfolio</a> |
 			<a href="<c:url value='/UserServletLogout'/>" target="_parent">Logout</a> |
 			<a href="<c:url value='/jsps/item.jsp'/>" target="body">Query ALL USERS</a><br>
+			<a href="<c:url value='/jsps/balance-sheet/balance-sheet-main.jsp'/>" target="_parent">Balance Sheet</a> |
 			<a href="<c:url value='/jsps/asset-liability/asset-liability-main.jsp'/>" target="body">Assets/Liabilities</a>&nbsp;&nbsp;
 		</c:otherwise>
 	</c:choose>

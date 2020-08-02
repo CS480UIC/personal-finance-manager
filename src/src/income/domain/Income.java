@@ -2,7 +2,7 @@ package income.domain;
 
 public class Income {
 	/*
-	 * Correspond to the income table
+	 * Corresponds to the income table
 	 */
 	
 	private String income_id;
