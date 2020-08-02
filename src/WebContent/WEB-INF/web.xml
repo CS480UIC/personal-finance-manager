@@ -184,6 +184,16 @@
     <servlet-name>ViewLossMonths</servlet-name>
     <url-pattern>/ViewLossMonths</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MonthsWithoutExpense</display-name>
+    <servlet-name>MonthsWithoutExpense</servlet-name>
+    <servlet-class>expense.web.servlet.MonthsWithoutExpense</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MonthsWithoutExpense</servlet-name>
+    <url-pattern>/MonthsWithoutExpense</url-pattern>
+  </servlet-mapping>
   
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
