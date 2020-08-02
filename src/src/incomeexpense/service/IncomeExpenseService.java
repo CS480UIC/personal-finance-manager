@@ -11,9 +11,9 @@ import user.service.UserException;
 public class IncomeExpenseService {
 	private IncomeExpenseDao incomeexpenseDao = new IncomeExpenseDao();
 	
-	public List<IncomeExpense> IncomeExpenseDiff(String user_id, String month) {
+	public List<IncomeExpense> IncomeExpenseDiff(String user_id) {
 		// TODO Auto-generated method stub
-		return incomeexpenseDao.IncomeExpenseDiff(user_id,month);
+		return incomeexpenseDao.IncomeExpenseDiff(user_id);
 	}
 	
 	

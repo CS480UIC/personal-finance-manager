@@ -14,7 +14,7 @@ import incomeexpense.domain.IncomeExpense;
 public class IncomeExpenseDao {
 	
 	
-	public List<IncomeExpense> IncomeExpenseDiff(String user_id, String month) {
+	public List<IncomeExpense> IncomeExpenseDiff(String user_id) {
 		
 		List<IncomeExpense> list = new ArrayList<>();
 		

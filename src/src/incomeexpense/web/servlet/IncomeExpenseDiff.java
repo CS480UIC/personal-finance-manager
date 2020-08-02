@@ -48,14 +48,14 @@ public class IncomeExpenseDiff extends HttpServlet {
 		String[] values = paramMap.get("user_id");
 		String user_id = StringUtils.substring(values[0], 0, values[0].length() - 1);
 		
-		values = paramMap.get("month");
-		String month = values[0];
+//		values = paramMap.get("month");
+//		String month = values[0];
 		
 		IncomeExpenseService incomeexpenseservice = new IncomeExpenseService();
 		
-		request.setAttribute("IncomeExpenseList", incomeexpenseservice.IncomeExpenseDiff(user_id,month));
+		request.setAttribute("IncomeExpenseList", incomeexpenseservice.IncomeExpenseDiff(user_id));
 		
-		List<IncomeExpense> li = incomeexpenseservice.IncomeExpenseDiff(user_id,month);
+		List<IncomeExpense> li = incomeexpenseservice.IncomeExpenseDiff(user_id);
 		PrintWriter out = response.getWriter();
 		
 		out.print("<table><tr><th>in_amt</th><th>ex_amt</th><th>diff=in_amt-ex_amt</th><th>month</th>");
@@ -73,7 +73,8 @@ public class IncomeExpenseDiff extends HttpServlet {
 			out.println(li.get(i).getMonth());
 			out.print("</td>");
 		}
-		out.print("</table>");
+		out.print("</table><br/>");
+		out.print("<h3>NOTE: The differences are only shown for those months for which at least one entry for both, income and expense, was found.</h3>");
 		
 	}
 
