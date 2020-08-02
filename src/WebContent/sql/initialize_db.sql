@@ -97,24 +97,39 @@ CREATE TABLE IF NOT EXISTS transaction(
     FOREIGN KEY (user_id) REFERENCES tb_user(user_id)
 );
 
-INSERT INTO tb_user (username,password,email,name,address,phone)
-VALUES ('alan','alan','alan@gmail.com','Alan' , '111, Adams St.' , 1111111111),
-	   ('bella','bella','bella@gmail.com','Bella', '222, Baxter St.', 2222222222),
-	   ('cindy','cindy','cindy@gmail.com','Cindy', '333, Carter St.', 3333333333);
-
-INSERT INTO income (user_id,in_date,description,amount,tags) VALUES (2,'2020-05-31','Salary for May 2020' ,3000 ,'salary;may;2020;');
-INSERT INTO income (user_id,in_date,description,amount,tags) VALUES (3,'2020-06-05','Lent money received' ,250  ,'loaned;return;');
-INSERT INTO income (user_id,in_date,description,amount,tags) VALUES (3,'2020-06-27','Salary for June 2020',5500 ,'salary;june;2020');
-
-INSERT INTO expense (user_id,date,description,amount,tags) VALUES (1,'2020-05-20','Summer semester fees',700,'fees;summer;semester;');
-INSERT INTO expense (user_id,date,description,amount,tags) VALUES (2,'2020-06-03','Flight tickets to LA',450,'flight;ticket;Chicago;LA;');
-INSERT INTO expense (user_id,date,description,amount,tags) VALUES (1,'2020-06-18','Ordered carryout'    ,23 ,'ubsereats;chipotle;mexican;food;');
-
+INSERT INTO tb_user (name,address,phone)
+VALUES ('Alan' , '111, Adams St.' , 1111111111),
+	   ('Bella', '222, Baxter St.', 2222222222),
+	   ('Cindy', '333, Carter St.', 3333333333);
+        
+INSERT INTO income (user_id,date,description,amount,tags)
+VALUES (2,'2020-05-31','Salary for May 2020',3000,'salary;may;2020;'),
+	   (3,'2020-06-05','Lent money received',250 ,'loaned;return;'),
+       (3,'2020-06-27','Salary for June 2020',3000 ,'salary;june;2020'),
+       (3,'2020-02-11','Dividend earned for July 2020',100 ,'divdend;june;2020'),
+       (3,'2020-02-11','Dividend earned for August 2020',120 ,'divdend;july;2020'),
+       (3,'2021-11-11','Dividend earned for September 2020',999.99 ,'divdend;august;2020'),
+       (3,'2020-07-13','Dividend earned for October 2020',100 ,'divdend;september;2020'),
+       (3,'2020-09-09','Dividend earned for November 2020',200 ,'divdend;october;2020'),
+       (3,'2020-03-27','Salary for March 2020',3000 ,'salary;March;2020'),
+       (3,'2020-04-27','Salary for April 2020',3000 ,'salary;April;2020'),
+       (3,'2020-08-27','Salary for August 2020',3000 ,'salary;August;2020'),
+       (3,'2020-09-27','Salary for September 2020',3000 ,'salary;September;2020');
+       
+INSERT INTO expense (user_id,ex_date,description,amount,tags)
+VALUES (1,'2020-05-20','Summer semester fees',700,'fees;summer;semester;'),
+	   (2,'2020-06-03','Flight tickets to LA',450,'flight;ticket;Chicago;LA;'),
+       (1,'2020-06-18','Ordered carryout',23 ,'ubsereats;chipotle;mexican;food;'),
+       (3,'2020-03-27','Ordered takeout',400 ,'takeout;'),
+       (3,'2020-04-27','Rent+takeout',850 ,'rent;takeout;'),
+       (3,'2020-08-27','Rent',650 ,'rent;'),
+       (3,'2020-09-27','Rent',250 ,'rent;');
+       
 INSERT INTO account (user_id,date,balance)
 VALUES (1,'2020-01-01',127700),
 	   (2,'2020-01-01',264000),
        (3,'2020-01-01',139600);
-
+       
 INSERT INTO asset
 VALUES ('Receivables',1,600),
 	   ('Receivables',2,975),
@@ -123,24 +138,46 @@ VALUES ('Receivables',1,600),
 INSERT INTO liability
 VALUES ('Payables',1,350),
 	   ('Credit Card Debt',3,300),
+       ('Loan1',5,555.55),
+       ('Loan2',1,1.00 ),
+       ('Loan3',1,1000.00 ),
+       ('Loan4',3,333.33),
+       ('Loan5',4,444.44),
        ('Wages Owed',2,1750);
 
 INSERT INTO balance_sheet
 VALUES (1,'2020-07-01',101000),
 	   (2,'2020-07-01',236000),
-       (3,'2020-01-01',122000);
-
+       (3,'2020-01-01',122000),
+       (3,'2020-02-01',123000),
+       (3,'2020-03-01',121000),
+       (3,'2020-03-01',124000),
+       (3,'2020-04-01',120000),
+       (3,'2020-05-01',122000),
+       (3,'2020-06-01',127000),
+       (3,'2020-07-01',121000),
+       (3,'2020-08-01',125000);
+       
 INSERT INTO stock
 VALUES ('AAPL',383.68),
 	   ('TSLA',1544.65),
-       ('MSFT',213.67);
-
+       ('MSFT',213.67),
+       ('NEW' ,30.67),
+       ('AMZN',88.88),
+       ('BRK' ,999.99),
+       ('STNE',42.00);
+       
 INSERT INTO portfolio
 VALUES (1,'AAPL',10,300.00,3000.00,383.68 ,3836.80),
 	   (1,'TSLA',1,1500.00,1500.00,1544.65,1544.65),
+	    (1,'NEW',5,20.00,100.00,30.00,1544.65),
+	   (1,'STNE',10,21.00,210.00,42.00,1544.65),
+	   (9,'AAPL',10,360.00,3600.00,1200.00,12000.00), 
        (1,'MSFT',14,213.67,2991.38,213.67,2991.38);
-
+       
 INSERT INTO transaction (user_id,symbol,quantity,price,value)
 VALUES (1,'AAPL',10,383.68,3836.80),
 	   (1,'TSLA',1,1544.65,1544.65),
        (1,'MSFT',14,213.67,2991.38);
+
+
