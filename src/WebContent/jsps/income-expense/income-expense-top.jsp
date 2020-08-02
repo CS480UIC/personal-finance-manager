@@ -14,5 +14,6 @@
 	<a href="<c:url value='edit-income.jsp'/>" target="_parent">Update Income</a>  |
 	<a href="<c:url value='delete-income.jsp'/>" target="_parent">Delete Income</a> |<br>
 	<a href="<c:url value='find-income.jsp'/>" target="_parent">Find Income by Tag</a> |
+	<a href="<c:url value='income-expense-diff.jsp'/>" target="_parent">Find Income-Expense Difference</a> |
 	<%-- <a href="<c:url value='/jsps/user/initialize.jsp'/>" target="_parent">Add Expenses</a> --%>
 </html>

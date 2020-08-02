@@ -1,4 +1,4 @@
-package income.web.servlet;
+package incomeexpense.web.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,20 +13,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 
+import incomeexpense.domain.IncomeExpense;
+import incomeexpense.service.IncomeExpenseService;
 import income.domain.Income;
 import income.service.IncomeService;
 
 /**
- * Servlet implementation class FindIncomeTag
+ * Servlet implementation class IncomeExpenseDiff
  */
-//@WebServlet("/FindIncomeTag")
-public class FindIncomeTag extends HttpServlet {
+//@WebServlet("/IncomeExpenseDiff")
+public class IncomeExpenseDiff extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FindIncomeTag() {
+    public IncomeExpenseDiff() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,44 +48,30 @@ public class FindIncomeTag extends HttpServlet {
 		String[] values = paramMap.get("user_id");
 		String user_id = StringUtils.substring(values[0], 0, values[0].length() - 1);
 		
-		values = paramMap.get("income_month");
+		values = paramMap.get("month");
 		String month = values[0];
 		
-		values = paramMap.get("tag");
-		String tag = values[0];
+		IncomeExpenseService incomeexpenseservice = new IncomeExpenseService();
 		
-		IncomeService incomeservice = new IncomeService();
+		request.setAttribute("IncomeExpenseList", incomeexpenseservice.IncomeExpenseDiff(user_id,month));
 		
-		request.setAttribute("IncomeList", incomeservice.FindIncomeTag(user_id,month,tag));
-		
-		List<Income> li = incomeservice.FindIncomeTag(user_id,month,tag);
+		List<IncomeExpense> li = incomeexpenseservice.IncomeExpenseDiff(user_id,month);
 		PrintWriter out = response.getWriter();
 		
-		out.print("<table><tr><th>income_id</th><th>user_id</th><th>in_date</th><th>description</th><th>amount</th><th>tags</th><th>actions</th>");
+		out.print("<table><tr><th>in_amt</th><th>ex_amt</th><th>diff=in_amt-ex_amt</th><th>month</th>");
 		for(int i = 0; i < li.size();i++){
 			out.print("<tr><td>");
-			out.println(li.get(i).getIncome_id());
+			out.println(li.get(i).getIn_amt());
 			out.print("</td>");
 			out.print("<td>");
-			out.println(li.get(i).getUser_id());
+			out.println(li.get(i).getEx_amt());
 			out.print("</td>");
 			out.print("<td>");
-			out.println(li.get(i).getIn_date());
+			out.println(li.get(i).getDiff());
 			out.print("</td>");
 			out.print("<td>");
-			out.println(li.get(i).getDescription());
+			out.println(li.get(i).getMonth());
 			out.print("</td>");
-			out.print("<td>");
-			out.println(li.get(i).getAmount());
-			out.print("</td>");
-			out.print("<td>");
-			out.println(li.get(i).getTags());
-			out.print("</td>");
-//			out.print("<td>\n<a href=\"/edit-income.jsp\">Edit</a>\n"+ 
-//					"&nbsp;&nbsp;&nbsp;&nbsp;\n" + 
-//					"<a href=\"/delete?id=<c:out value=" +li.get(i).getIncome_id()+"/>\">Delete</a>\n"+ 
-//					"</td>");
-			
 		}
 		out.print("</table>");
 		
